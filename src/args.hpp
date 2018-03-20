@@ -6,10 +6,14 @@
 using namespace std;
 
 
-class args 
+class Args 
 {
 public:
+  Args(string in_schema, int argc, char** argv);
+  string getSchema() const;
 private:
+  string schema;
+ 
 };
 
 

@@ -8,15 +8,14 @@ class argsTest : public ::testing::Test
 public:
 };
 
-// tests of fillTokens method:
 
-TEST_F(argsTest, trivial)
+TEST_F(argsTest, schemaCopied)
 {
-  ASSERT_FALSE(false);
-//  Bowling game("");  
-//  auto tokens = game.getTokens();
-//  ASSERT_FALSE(tokens.empty());
-//  ASSERT_EQ(tokens.at(0), "");
+  Args a1("", 1, nullptr);
+  ASSERT_EQ(a1.getSchema(), "");
+
+  Args a2(" ", 1, nullptr);
+  ASSERT_EQ(a2.getSchema(), " ");
 }
 
 
