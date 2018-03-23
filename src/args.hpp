@@ -4,17 +4,17 @@
 #include <map>
 
 using namespace std;
-
+using Flags = map<string, bool>;
 
 class Args 
 {
 public:
   Args(const string in_schema, const int argc, const string argv[]);
   string getSchema() const;
-  map<string, bool> getArgs() const;
+  Flags getFlags() const;
 private:
   string schema;
-  map<string, bool> args;  
+  Flags flags;  
 };
 
 
