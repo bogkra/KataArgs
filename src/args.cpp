@@ -9,13 +9,10 @@ using namespace std;
 
 Args::Args(const string in_schema, const int argc, const string argv[])
 {
-  flags["-b"] = false;
-  if (argc > 1 and argv[1] != "")
-  {    
-    flags[argv[1]] = true;
-  }
-  else 
-    schema = in_schema;
+  schema = in_schema;
+  for (int i=1; i< argc; i++)
+//  if (argc > 1 and argv[1] != "") 
+    flags[argv[i]] = true;
 }
 
 string Args::getSchema() const
