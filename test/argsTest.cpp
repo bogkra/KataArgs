@@ -41,6 +41,14 @@ TEST_F(argsTest, argumentsTrue)
   ASSERT_TRUE(a.getFlags()["-b"]);
 }
 
+TEST_F(argsTest, argumentBogusTrue)
+{
+  const string params1[] = {programName,"-b"};
+  Args a1("-a bool", 2, params1);
+  ASSERT_FALSE(a1.getFlags()["-a"]);
+  ASSERT_FALSE(a1.getFlags()["-b"]);
+}
+
 
 
 
